@@ -7,5 +7,6 @@ foreach ($user in $inactiveUsers)
 {Disable-ADAccount -Identity $user.DistinguishedName | Move-ADObject -TargetPath $disabledUsers
 }
 
-
+#How to undo disabling Everyones accounts
+Get-ADUser -Filter * | Enable-ADAccount     
 
