@@ -7,7 +7,6 @@ $Lastname = Read-Host "Enter Last Name"
 $Username = $Firstname+"."+$Lastname
 $Password = Read-Host -AsSecureString -Prompt "Set Password"
 
-
 New-ADUser `
     -Name "$FirstName $LastName" `
         -GivenName $FirstName `
