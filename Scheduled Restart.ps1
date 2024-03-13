@@ -12,7 +12,7 @@ Write-Host "Daily automatic server restart at 2AM"
 
 #Script for automatic eventlog pull on start-up
 $computers = "LON-DC1","LON-CL1","LON-SVR1"
-$action = New-ScheduledTaskAction (Invoke-Command -ScriptBlock {Get-Eventlog -Logname System -Newest 10} -ComputerName $computers -AsJob -JobName RemoteLogs)
+$action = New-ScheduledTaskAction (Invoke-Command -ScriptBlock {Get-Eventlog -Logname System -Newest 10} -ComputerName $computers)
 $trigger = New-ScheduledTaskTrigger -AtStartup
 $Principal = New-ScheduledTaskPrincipal -UserId "NT Authority\System" -RunLevel Highest
 $credential = (Import-Clixml -Path "C:\admincred.xml")
