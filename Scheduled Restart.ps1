@@ -8,7 +8,7 @@ $credential = (Import-Clixml -Path "C:\admincred.xml")
 Register-ScheduledTask -TaskName "2AM (PST) Server Restart" -trigger $trigger -Action $action -Principal $Principal -Credential $credential
 Write-Host "Daily automatic server restart at 2AM"
 
-
+#------------------------------------------------------------------------------------
 
 #Script for automatic eventlog pull on start-up
 $computers = "LON-DC1","LON-CL1","LON-SVR1"
