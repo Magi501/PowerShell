@@ -1,11 +1,11 @@
 Import-Module ActiveDirectory
 $OU = "OU=Marketing,DC=Adatum,DC=com"
-$Department = "Marketing"
-$Title = "Customer Success"
-$Firstname = "Marty"
-$Lastname = "McFly"
-$Username = "Marty.McFly"
-$Password = ConvertTo-SecureString "Wahoo2u2!" -AsPlainText -Force
+$Department = Read-Host -Prompt "Enter Department"
+$Title = Read-Host "Enter Job Title"
+$Firstname = Read-Host "Enter First Name"
+$Lastname = Read-Host "Enter Last Name"
+$Username = $Firstname+"."+$Lastname
+$Password = Read-Host -AsSecureString -Prompt "Set Password"
 
 
 New-ADUser `
