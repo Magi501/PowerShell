@@ -1,10 +1,11 @@
+Import-Module ActiveDirectory
 $OU = "OU=Marketing,DC=Adatum,DC=com"
 $Department = "Marketing"
 $Title = "Customer Success"
-$Firstname = "Karen"
-$Lastname = "Dalton"
-$Username = "Karen.Dalton"
-$Password = ConvertTo-SecureString "Pa55w.rd" -AsPlainText -Force
+$Firstname = "Marty"
+$Lastname = "McFly"
+$Username = "Marty.McFly"
+$Password = ConvertTo-SecureString "Wahoo2u2!" -AsPlainText -Force
 
 
 New-ADUser `
@@ -14,10 +15,12 @@ New-ADUser `
                 -SamAccountName $UserName `
                     -UserPrincipalName "$UserName@Adatum.com" `
                         -Path $OU `
-                            -AccountPassword $UserPassword `
+                            -AccountPassword $Password `
                                 -Enabled $true `
-                                    -Department "Marketing" `
-                                        -Title "Customer Success Manager" `
+                                    -Department $Department `
+                                        -Title $Title `
                                             -ChangePasswordAtLogon $true
 
-Write-Host "(Get-ADUser -identity $username | fl)""OU=Marketing,DC=yourdomain,DC=com" # Replace with the actual OU path
+Write-Host "--------------------------------------------"
+Write-Host "      $UserName Account Created             "
+Write-Host "--------------------------------------------"
