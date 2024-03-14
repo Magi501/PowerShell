@@ -5,7 +5,7 @@ for ($i = 1; $i -le 7; $i++) {
         $guess = Read-Host "Guess #$i"
 
     if ($guess -eq $number) {
-            Write-Host "Congratulations! You got ity in $i guesses."
+            Write-Host "Congratulations! You got it in $i guesses."
                     break
  }
      elseif ($guess -gt $number) {

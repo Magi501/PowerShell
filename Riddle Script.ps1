@@ -6,6 +6,6 @@ for ($i = 1; $i -le 1; $i++) {
         Read-Host "Congratulations, you have solved the riddle!"
     }
             elseif ($guess -ne $answer) {
-                Read-Host "Your answer is incorrect."
+                Read-Host "Your answer is incorrect"
     }
 }
