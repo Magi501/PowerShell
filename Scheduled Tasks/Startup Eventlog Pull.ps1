@@ -1,4 +1,6 @@
 #Script for automatic eventlog pull on start-up
+
+#Input computer names you would like to manage
 $computers = "LON-DC1","LON-CL1","LON-SVR1"
 $action = New-ScheduledTaskAction (Invoke-Command -ScriptBlock {Get-Eventlog -Logname System -Newest 10} -ComputerName $computers)
 $trigger = New-ScheduledTaskTrigger -AtStartup

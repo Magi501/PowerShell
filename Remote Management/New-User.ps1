@@ -1,5 +1,6 @@
 #This is a tool for creating new users in Active Directory
 
+#Import Active Directory Module
 Import-Module ActiveDirectory
 
 #Run the script to input User information

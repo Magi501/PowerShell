@@ -1,4 +1,6 @@
 #Script for automatic server restart at 2AM
+
+#Input computer names you want to schedule
 $computers = "LON-DC1","LON-CL1","LON-SVR1"
 $action = New-ScheduledTaskAction (Invoke-Command -ScriptBlock {Restart-Computer -ComputerName $computers -Credential $credential -Force} )
 $trigger = New-ScheduledTaskTrigger -Daily -At 2:00AM

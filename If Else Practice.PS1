@@ -1,4 +1,4 @@
-
+#simple practice tool to check for diskspace on the local server
 if ($freespace -le 5GB) {
     Write-Host "Free disk space is less than 5GB"
     <# Action to perform if the condition is true #>

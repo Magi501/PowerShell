@@ -1,3 +1,6 @@
+#This prompt is a quick tool to check the status of servers managed
+
+#Input the computer names of all servers you want to query
 $servers = @("LON-DC1", "LON-CL1", "LON-SVR1")
 
 foreach ($server in $servers) {
