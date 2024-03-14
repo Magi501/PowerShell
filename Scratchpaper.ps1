@@ -1,17 +1,22 @@
-#add comments here
+# I recomend adding comments above the items to keep track of what each part is doing and why.  
+#I feel this helps if someone is looking at your scrip to understand the method to your madness
 
+#Load Windows Forms and Drawing 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
+#Create GUI Form for use in to input variables for use in New-ADUser
 $form = New-Object System.Windows.Forms.Form
 $form.Text ='New User Input'
 $form.Size = New-Object System.Drawing.Size(400,300)
-
+    
+    #Create textbox to read "First Name" 
     $FirstName = New-Object System.Windows.Forms.Label
     $FirstName.Location = New-Object System.Drawing.Point(10,20)
     $FirstName.Size = New-Object System.Drawning.Size(100,20)
     $FirstName.Text = "First Name:"
     $form.Controls.Add($FirstName)
+        #Create Input field to assign a value for "$FirstNameTB" variable 
         $FirstNameTB = New-Object System.Windows.Forms.TextBox
         $FirstNameTB.Location = New-Object System.Drawing.Point(120,20)
         $FirstNameTB.Size = New-Object System.Drawning.Size(200,20)
@@ -58,5 +63,8 @@ if ($Result -eq [System.Windows.Forms.DialogResult]::OK)
                         $UserPrincipalName = $FirstName + "." + $LastName + "@contoso.com"
                             $DisplayName = $FirstName + " " + $LastName  
 New-ADUser -Name $DisplayName -GivenName $FirstName -Surname $LastName -UserPrincipalName $UserPrincipalName -DisplayName $DisplayName -Title $Title -Department $Department -AccountPassword (ConvertTo-SecureString -AsPlainText "P@ssw0rd" -Force) -Enabled $true
-}           
+}
+
+#looks good and looks like it should work I see you did your differntly instead of creating a function you just have a script to run.  
+#I would recommend creating the habbit of putting comments in your code.  I feel this helps you understand what you are doing and anyone looking at your work to understand it.
 
