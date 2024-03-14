@@ -1,7 +1,5 @@
 Add-Type -AssemblyName System.Windows.Forms
 
- 
-
 # Create a form
 $form = New-Object Windows.Forms.Form
 $form.Text = "Connor's Great Day Motivator"
