@@ -64,7 +64,3 @@ if ($Result -eq [System.Windows.Forms.DialogResult]::OK)
                             $DisplayName = $FirstName + " " + $LastName  
 New-ADUser -Name $DisplayName -GivenName $FirstName -Surname $LastName -UserPrincipalName $UserPrincipalName -DisplayName $DisplayName -Title $Title -Department $Department -AccountPassword (ConvertTo-SecureString -AsPlainText "P@ssw0rd" -Force) -Enabled $true
 }
-
-#looks good and looks like it should work I see you did your differntly instead of creating a function you just have a script to run.  
-#I would recommend creating the habbit of putting comments in your code.  I feel this helps you understand what you are doing and anyone looking at your work to understand it.
-
