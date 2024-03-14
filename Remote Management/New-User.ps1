@@ -1,6 +1,10 @@
+#This is a tool for creating new users in Active Directory
+
 Import-Module ActiveDirectory
-$OU = "OU=Marketing,DC=Adatum,DC=com"
+
+#Run the script to input User information
 $Department = Read-Host -Prompt "Enter Department"
+$OU = "OU=$Department,DC=Adatum,DC=com"
 $Title = Read-Host "Enter Job Title"
 $Firstname = Read-Host "Enter First Name"
 $Lastname = Read-Host "Enter Last Name"
