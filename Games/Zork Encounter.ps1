@@ -1,6 +1,6 @@
-###################################################
-#                   ZORK ENCOUNTER                #
-###################################################
+########################################################################
+#                           ZORK ENCOUNTER                             #
+########################################################################
 #This is a practice using a few references from "Zork"
 #The Underground Empire to practice if else logic
 
@@ -25,6 +25,6 @@ $answer = "attack troll with nasty knife"
                 Read-Host "You are crushed by the troll"
     }
 }
-Write-Host "--------------------------------------------"
-Write-Host "                 GAME OVER                  "
-Write-Host "--------------------------------------------"
+Write-Host "-----------------------------------------------------------"
+Write-Host "                          GAME OVER                        "
+Write-Host "-----------------------------------------------------------"
